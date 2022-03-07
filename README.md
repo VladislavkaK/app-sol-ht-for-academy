@@ -12,7 +12,7 @@ node scripts/deploy.js
 npx hardhat help
 ```
 
-## Generate address smart contract for network rikinby
+## Generate address smart contract for network rinkeby
 
 ```
   npx hardhat run scriptis/deploy.js --network rinkeby
