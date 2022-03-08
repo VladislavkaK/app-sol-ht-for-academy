@@ -33,5 +33,5 @@ npx hardhat help
 ## Completing tasks from hardhat.config.js
 
 ```
-  npx hardhat <name_task>
+  npx hardhat <name_task> --network rinkeby
 ```
