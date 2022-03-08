@@ -3,13 +3,13 @@
 ## Default commands
 
 ```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
+npm run accounts
+npm run compile
+npm run clean
+npm run test
+npm run node
 node scripts/deploy.js
-npx hardhat help
+npm run help
 ```
 
 ## Generate address smart contract for network rinkeby
