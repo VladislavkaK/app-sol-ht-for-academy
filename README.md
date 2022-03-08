@@ -29,3 +29,9 @@ npx hardhat help
 ```
   npx hardhat coverage [command-options] -> https://github.com/sc-forks/solidity-coverage
 ```
+
+## Completing tasks from hardhat.config.js
+
+```
+  npx hardhat <name_task>
+```
