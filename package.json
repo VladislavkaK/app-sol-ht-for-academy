@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha",
+    "test": "npx hardhat test",
     "eject": "react-scripts eject",
     "accounts": "npx hardhat accounts",
     "clean": "npx hardhat clean",
