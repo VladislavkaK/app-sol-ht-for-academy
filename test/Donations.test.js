@@ -30,7 +30,7 @@ describe('Donations', function () {
     const tx2 = await donationsContract.connect(clientAccount2).donat({ value: '25' });
     const tx3 = await donationsContract.connect(clientAccount3).donat({ value: '10' });
     const tx4 = await donationsContract.connect(clientAccount2).donat({ value: '15' });
-    const txWithdrawalFunds = await donationsContract.connect(ownerAccount).withDrawAll(clientAccount2.address, 10);
+    const txWithdrawalFunds = await donationsContract.connect(ownerAccount).withDrawAll(clientAccount2.address, 40);
 
     // eslint-disable-next-line
     await expect(() => tx).to.changeEtherBalance(clientAccount, -100);
@@ -41,7 +41,7 @@ describe('Donations', function () {
     // eslint-disable-next-line
     await expect(() => tx4).to.changeEtherBalance(clientAccount2, -15);
     // eslint-disable-next-line
-    await expect(() => txWithdrawalFunds).to.changeEtherBalance(clientAccount2, 10);
+    await expect(() => txWithdrawalFunds).to.changeEtherBalance(clientAccount2, 40);
     await tx.wait();
 
     const balanceByAddressClientAccount2 = await donationsContract.getBalanceByAddress(clientAccount2.address);
@@ -50,7 +50,7 @@ describe('Donations', function () {
     const numberClients = 3;
 
     // eslint-disable-next-line
-    expect(totalBalance).to.eq(140);
+    expect(totalBalance).to.eq(110);
     // eslint-disable-next-line
     expect(balanceByAddressClientAccount2).to.eq(40);
     // eslint-disable-next-line
