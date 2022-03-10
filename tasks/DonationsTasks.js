@@ -1,5 +1,4 @@
 const { task } = require("hardhat/config");
-const fs = require("fs");
 
 task("total-balance", "Prints an smart contract balance")
   .addParam("contract", "The contract")
