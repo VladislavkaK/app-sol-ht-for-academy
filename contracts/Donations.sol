@@ -29,7 +29,6 @@ contract Donations {
   function donat() public payable {
     uint donatNum = balances[msg.sender].totalSum;
 
-
     if (balances[msg.sender].totalSum == 0) {
       addresses.push(msg.sender);
     }

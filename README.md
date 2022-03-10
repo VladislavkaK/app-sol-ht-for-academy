@@ -24,14 +24,15 @@ npm run help
   npx hardhat verify --network rinkeby <address_smart_contract>
 ```
 
-## Tests coverage
+## Tests coverage -> https://github.com/sc-forks/solidity-coverage
 
 ```
-  npx hardhat coverage [command-options] -> https://github.com/sc-forks/solidity-coverage
+  npx hardhat coverage --testfiles "test/*.js"
 ```
 
-## Completing tasks from hardhat.config.js
+## Tasks
 
 ```
-  npx hardhat <name_task> --network rinkeby
+  get address contract -> npm run deploy:rinkeby
+  get total balance -> npx hardhat total-balance --contract 0xf2cDbCAe2ff6324D15Cb93E0D1021B8712E509cc --network rinkeby
 ```

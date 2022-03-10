@@ -1,12 +1,19 @@
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
-// eslint-disable-next-line no-undef
-task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
-  const accounts = await hre.ethers.getSigners();
+const { task } = require("hardhat/config");
+const fs = require("fs");
 
-  for (const account of accounts) {
-    console.log('address acc', account.address);
-  }
-});
+task("total-balance", "Prints an smart contract balance")
+  .addParam("contract", "The contract")
+  .setAction(async (taskArgs, hre) => {
+    const contractAddr = taskArgs.contract;
+    let signer;
+    [signer] = await hre.ethers.getSigners();
+
+    const contract = await hre.ethers.getContractFactory("Donations");
+    const DonationsContract = await new hre.ethers.Contract(contractAddr, contract.interface, signer);
+
+    const balance = await DonationsContract.getTotalBalance();
+
+    console.log('Total balance', balance);
+  });
 
 module.exports = {};
